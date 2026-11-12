@@ -343,6 +343,23 @@ def build_figures(root, map_support_sha):
         write(name, cells)
 
 
+STATION_FEATURE_RUN_LOG = """\
+## Verified Colab run without export · 2026-11-13
+
+The notebook processed all 826 field observations with water mask v4. A Colab test retrieved live Earth Engine results in small requests and ran the QA and candidate-table cells with batch export and Drive copy disabled.
+
+| Station table before the Context join | Archived ZIP v2 rows | Live Colab rows |
+| --- | ---: | ---: |
+| Full (all cleaned field observations) | 826 | 826 |
+| Strict candidates | 175 | 174 |
+| Relaxed candidates | 340 | 342 |
+
+Across 44 feature and QA columns, 811 rows matched the archive and 15 differed. Six of the 15 selected a different scene ID. The live run still reported more water than clear pixels in 83 rows.
+
+The historical model uses the archived relaxed table **after** joining environmental context (340 rows × 226 columns). The [station dataset guide and run log](https://github.com/Boonyaratt/sentinel2-water-quality/blob/main/docs/station-features-run-log.md) lists the filters, comparison method, and water-mask checks.
+"""
+
+
 FEATURE_SOURCES = (
     ("02_station_features/01_CAL_make_gg_ee_rswq_clean_2562_2568_b100_v4.ipynb",
      "01_Sentinel2_Station_Features.ipynb"),
@@ -395,6 +412,8 @@ def build_feature_sources(root):
                 source = source.replace('f"rswq_context_features_{CONTEXT_RUN_TAG}"',
                                         'f"rswq_context_features_{CONTEXT_RUN_TAG}_rebuild"')
             cells.append(cell(kind, source))
+            if stage == 0 and index == 0:
+                cells.append(source_cell("markdown", STATION_FEATURE_RUN_LOG))
         write(name, cells)
 
 
