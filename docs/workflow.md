@@ -3,8 +3,8 @@
 | Stage | Input | Method and output | Evidence |
 |---|---|---|---|
 | 1. Field observations | Cleaned field workbook/CSV | Standardized dates, station IDs, units, and coordinate exclusions. The canonical ready table has 826 rows. | Manuscript Tables 1 and 4 |
-| 2. Station features | Field dates and locations | Sentinel-2 `100 m / watermask v4`; environmental context `GSMaP / ERA5-Land strict v2`. Archived exports substitute for live Earth Engine access. | Tables 2–3 and the export inventories |
-| 3. Model table | Three S2 candidate tables and one context table | Join by `sample_id`, preserving Sentinel-2 metadata. The reference relaxed table is 340 × 226. | CSV assembly audit |
+| 2. Station features | Field dates and locations | Sentinel-2 `100 m / watermask v4`; environmental context `GSMaP / ERA5-Land strict v2`. Archived exports substitute for live Earth Engine access. | Tables 2–3 and the [station dataset guide](station-features-run-log.md) |
+| 3. Model table | Full, strict, and relaxed S2 tables and one context table | Join by `sample_id`, preserving Sentinel-2 metadata. The reference relaxed table is 340 × 226. | CSV assembly audit |
 | 4. Model evaluation | Relaxed model table and target-specific filters | Fit 2019–2023 and evaluate 2024–2025. Within ±1 day there are 112 rows; the SS cutoff ≤130 mg/L retains 110. Train/evaluation counts are 79/33 for turbidity and DO proxy and 77/33 for SS. | Tables 4–5 |
 | 5. Spatial prediction | Locked bundles, polygon 62-band rasters, RGB, and AOI | Apply the model and water/applicability masks, then draw prediction maps and S2-only versus S2 + Context differences. | Figs. 3–4 |
 | 6. Temporal contrast | Two WB02 scenes, matching RGB and reference grid | Compare 19 June minus 4 June 2024 on 1,862,953 common valid pixels; summarize environmental context separately. | Fig. 5 and Table 6 |
