@@ -2,7 +2,7 @@
 
 **Waterbody-scale estimates of turbidity, suspended solids, and an indirect dissolved-oxygen proxy in southern Thailand.** This project compares Sentinel-2 features alone with Sentinel-2 plus environmental context, then maps the selected models and examines what drives their predictions.
 
-[Figure gallery](docs/figures.md) · [Research workflow](docs/workflow.md) · [Team handoff (ภาษาไทย)](docs/handoff-th.md)
+[Run in Colab](notebooks/README.md) · [Data inventory](docs/data-inventory.md) · [Team handoff (ภาษาไทย)](docs/handoff-th.md) · [Figure gallery](docs/figures.md) · [Research workflow](docs/workflow.md)
 
 ![Representative prediction maps for Thale Luang, Lower Lang Suan River, and Pak Phanang River](figures/03-representative-maps.png)
 
@@ -41,6 +41,8 @@ Each comparison above uses 33 observations in the historical 2024–2025 evaluat
 
 ## Continue the work
 
-The team route starts with the cleaned field table and the original precomputed Sentinel-2/context features, GeoTIFFs, and RGB exports. With the restricted Drive handoff archive, a collaborator can run the local checks and continue the analysis without Earth Engine access. The [Thai runbook](docs/handoff-th.md) lists inputs, expected outputs, exact archive layout, and outstanding checks. Original export notebooks document how the Earth Engine files were produced.
+1. Get the restricted `Water_Quality_Processed_Handoff.zip` from the project owner and place it on your Google Drive.
+2. Open [00 Start Here in Colab](https://colab.research.google.com/github/Boonyaratt/sentinel2-water-quality/blob/main/notebooks/00_Start_Here.ipynb) and run the first verification. The starting point is the cleaned field data and the precomputed Sentinel-2 and context exports. Earth Engine access is not required.
+3. Open the [Colab notebook index](notebooks/README.md) to render Figures 3–5, or the [Thai runbook](docs/handoff-th.md) for modeling, SHAP, and local runs. Use the [data inventory](docs/data-inventory.md) to trace each input and source notebook to its location.
 
-The public repository contains selected source code, documentation, and figures. Row-level observations, private Drive links, model bundles, and research rasters are distributed to authorized collaborators through the handoff archive.
+The public repository contains code, documentation, and figures. The team archive contains row-level observations, trained model bundles, rasters, and the original source notebooks, including those used for Earth Engine exports. Access to this repository does not grant access to the team archive.

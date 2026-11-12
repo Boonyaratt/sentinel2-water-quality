@@ -1,10 +1,16 @@
 # คู่มือรับช่วงงาน
 
-เส้นทางหลักเริ่มที่ **ตารางภาคสนามที่คลีนแล้ว** และใช้ไฟล์ดาวเทียมที่คำนวณไว้ใน Drive ของทีม รันบนเครื่องตัวเองได้โดยไม่ต้องมีสิทธิ์ Earth Engine
+เส้นทางหลักเริ่มที่ **ตารางภาคสนามที่คลีนแล้ว** และใช้ไฟล์ดาวเทียมที่คำนวณไว้แล้ว รันได้บน Colab หรือบนเครื่องตัวเองโดยไม่ต้องมีสิทธิ์ Earth Engine ดู [สารบัญ Colab](../notebooks/README.md) และ [รายการข้อมูลกับโน้ตบุ๊กต้นทาง](data-inventory.md) ประกอบ
+
+## เริ่มบน Colab
+
+1. ขอ ZIP จากเจ้าของโครงการ แล้วเพิ่ม shortcut ไว้ใน My Drive หรืออัปโหลดสำเนาของตัวเอง
+2. เปิด [00 Start Here](https://colab.research.google.com/github/Boonyaratt/sentinel2-water-quality/blob/main/notebooks/00_Start_Here.ipynb) กด Run all และอนุญาตให้ Colab อ่าน Drive ถ้าวาง ZIP ไว้ในโฟลเดอร์ย่อย ให้แก้ `ARCHIVE_PATH` ในเซลล์แรก
+3. ส่ง `verification.json` กลับให้ผู้ส่งมอบ แล้วเลือก Colab 04, 05 หรือ 06b จากสารบัญตามรูปที่ต้องการ แต่ละโน้ตบุ๊กแตก ZIP และตั้งพาธให้เอง
 
 ## 1. เตรียมโฟลเดอร์
 
-1. ขอสิทธิ์เปิด `Water_Quality_Processed_Handoff.zip` จากเจ้าของโครงการ ชุดส่งต่อเก็บแยกจาก GitHub ใน Drive ที่จำกัดสิทธิ์ของทีม
+1. ขอ `Water_Quality_Processed_Handoff.zip` จากเจ้าของโครงการ ชุดนี้ส่งแยกจาก GitHub ผ่าน Drive แบบจำกัดสิทธิ์
 2. แตก ZIP ลงโฟลเดอร์แยก แล้วเปิด terminal ในโฟลเดอร์ที่เห็น `START_HERE.md`, `data_ready/`, `models/`, `src/` และ `tools/`
 3. สร้าง virtual environment ด้วย Python 3.11 และติดตั้ง requirements ของชุด
 
