@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+run_output/
+data_ready/
+raw_inputs/
+models/
+expected_outputs/
+*.joblib
+*.tif
+*.tiff
+*.xlsx
+*.zip
+.env
