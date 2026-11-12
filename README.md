@@ -6,6 +6,8 @@
 
 **Working with an AI agent?** Ask it to read [AGENTS.md](AGENTS.md) first. The same guide is included at the root of the full v2 team ZIP.
 
+**Ready to reproduce the results?** [Download the full handoff ZIP from Google Drive](https://drive.google.com/drive/folders/1dSAw7W5tQnsAc93H0o5T-V7KA1UJgAHS?usp=sharing).
+
 ![Representative prediction maps for Thale Luang, Lower Lang Suan River, and Pak Phanang River](figures/03-representative-maps.png)
 
 *Three representative waterbodies. From left to right: locator, turbidity, suspended solids, and DO proxy. Predictions cover eligible water pixels within the selected scenes.*
@@ -43,8 +45,8 @@ Each comparison above uses 33 observations in the historical 2024–2025 evaluat
 
 ## Continue the work
 
-1. Get the restricted `Water_Quality_Processed_Handoff_Windows_v2.zip` from the project owner and place it on your Google Drive. The earlier full ZIPs have the same research inputs and remain supported in Colab.
+1. Get `Water_Quality_Processed_Handoff_Windows_v2.zip` from the [handoff folder](https://drive.google.com/drive/folders/1dSAw7W5tQnsAc93H0o5T-V7KA1UJgAHS?usp=sharing). Upload it to **My Drive**, or add a shortcut to the ZIP there. Keep the filename unchanged and do not extract it for Colab.
 2. Open [00 Start Here in Colab](https://colab.research.google.com/github/Boonyaratt/sentinel2-water-quality/blob/main/notebooks/00_Start_Here.ipynb) and run the first verification. The starting point is the cleaned field data and the precomputed Sentinel-2 and context exports. Earth Engine access is not required.
 3. Open the [Colab notebook index](notebooks/README.md) to render Figures 3–5, or the [Thai runbook](docs/handoff-th.md) for modeling, SHAP, and local runs. Use the [data inventory](docs/data-inventory.md) to trace each input and source notebook to its location.
 
-The public repository contains code, documentation, and figures. The team archive contains row-level observations, trained model bundles, rasters, and the original source notebooks, including those used for Earth Engine exports. Access to this repository does not grant access to the team archive.
+The public repository contains code, documentation, and figures. The ZIP is hosted separately on Drive and contains cleaned observations, trained model bundles, rasters, and the original source notebooks, including those used for Earth Engine exports.

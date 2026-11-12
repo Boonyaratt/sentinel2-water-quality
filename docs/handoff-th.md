@@ -6,13 +6,13 @@
 
 ## เริ่มบน Colab
 
-1. ขอ ZIP จากเจ้าของโครงการ แล้วเพิ่ม shortcut ไว้ใน My Drive หรืออัปโหลดสำเนาของตัวเอง
+1. เปิด [โฟลเดอร์ชุดส่งต่อใน Google Drive](https://drive.google.com/drive/folders/1dSAw7W5tQnsAc93H0o5T-V7KA1UJgAHS?usp=sharing) แล้วเพิ่ม shortcut ของ `Water_Quality_Processed_Handoff_Windows_v2.zip` ไว้ใน My Drive หรืออัปโหลดสำเนาของตัวเอง
 2. เปิด [00 Start Here](https://colab.research.google.com/github/Boonyaratt/sentinel2-water-quality/blob/main/notebooks/00_Start_Here.ipynb) กด Run all และอนุญาตให้ Colab อ่าน Drive ถ้าวาง ZIP ไว้ในโฟลเดอร์ย่อย ให้แก้ `ARCHIVE_PATH` ในเซลล์แรก
 3. ส่ง `verification.json` กลับให้ผู้ส่งมอบ แล้วเลือก Colab 04, 05 หรือ 06b จากสารบัญตามรูปที่ต้องการ แต่ละโน้ตบุ๊กแตก ZIP และตั้งพาธให้เอง
 
 ## 1. เตรียมโฟลเดอร์
 
-1. ขอ `Water_Quality_Processed_Handoff_Windows_v2.zip` จากเจ้าของโครงการ ชุดนี้เปิดใน File Explorer ได้และมีคู่มือสำหรับ AI agent ส่วน ZIP เต็มรุ่นก่อนยังใช้กับ Colab ได้
+1. ดาวน์โหลด `Water_Quality_Processed_Handoff_Windows_v2.zip` จากโฟลเดอร์ Drive ด้านบน ชุดนี้เปิดใน File Explorer ได้และมีคู่มือสำหรับ AI agent ส่วน ZIP เต็มรุ่นก่อนยังใช้กับ Colab ได้
 2. แตก ZIP ลงโฟลเดอร์แยก แล้วเปิด terminal ในโฟลเดอร์ที่เห็น `START_HERE.md`, `data_ready/`, `models/`, `src/` และ `tools/`
 3. สร้าง virtual environment ด้วย Python 3.11 และติดตั้ง requirements ของชุด
 
