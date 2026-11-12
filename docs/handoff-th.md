@@ -4,8 +4,8 @@
 
 ## 1. เตรียมโฟลเดอร์
 
-1. ขอไฟล์ส่งต่อจากเจ้าของโครงการ ใช้ `Water_Quality_Processed_Handoff.zip` แบบไฟล์เดียว หรือชุด Drive สองส่วน `Water_Quality_Handoff_01_Core.zip` และ `Water_Quality_Handoff_02_Two_Date_Rasters.zip`
-2. แตกไฟล์ลงโฟลเดอร์แยก หากใช้ชุดสองส่วน ให้แตก **ทั้งสองไฟล์ลงโฟลเดอร์เดียวกัน** เพื่อให้ `data_ready/rasters/two_dates/` อยู่ร่วมกับข้อมูลชุดหลัก เปิด terminal ในโฟลเดอร์ที่เห็น `START_HERE.md`, `data_ready/`, `models/`, `src/` และ `tools/`
+1. ขอสิทธิ์เปิด `Water_Quality_Processed_Handoff.zip` จากเจ้าของโครงการ ชุดส่งต่อเก็บแยกจาก GitHub ใน Drive ที่จำกัดสิทธิ์ของทีม
+2. แตก ZIP ลงโฟลเดอร์แยก แล้วเปิด terminal ในโฟลเดอร์ที่เห็น `START_HERE.md`, `data_ready/`, `models/`, `src/` และ `tools/`
 3. สร้าง virtual environment ด้วย Python 3.11 และติดตั้ง requirements ของชุด
 
 ```powershell
