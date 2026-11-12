@@ -2,7 +2,7 @@
 
 **Waterbody-scale estimates of turbidity, suspended solids, and an indirect dissolved-oxygen proxy in southern Thailand.** This project compares Sentinel-2 features alone with Sentinel-2 plus environmental context, then maps the selected models and examines what drives their predictions.
 
-[Run in Colab](notebooks/README.md) · [Data inventory](docs/data-inventory.md) · [Team handoff (ภาษาไทย)](docs/handoff-th.md) · [Figure gallery](docs/figures.md) · [Research workflow](docs/workflow.md)
+[Run in Colab](notebooks/README.md) · [Feature extraction & Drive inputs (ภาษาไทย)](docs/drive-features-th.md) · [Data inventory](docs/data-inventory.md) · [Team handoff (ภาษาไทย)](docs/handoff-th.md) · [Figure gallery](docs/figures.md) · [Research workflow](docs/workflow.md)
 
 ![Representative prediction maps for Thale Luang, Lower Lang Suan River, and Pak Phanang River](figures/03-representative-maps.png)
 

@@ -4,6 +4,8 @@
 
 Get `Water_Quality_Processed_Handoff.zip` from the project owner. Add the shared ZIP to **My Drive** as a shortcut, or upload your copy. Open the appropriate notebook below, connect to a fresh CPU runtime, and run from the top. Set `ARCHIVE_PATH` in the first code cell if the ZIP is in a subfolder. The notebook verifies and extracts the archive itself.
 
+**Already have the original TIFFs on Drive?** For notebooks 04, 05 and 06b, use the small `Water_Quality_Map_Support.zip` and switch on `USE_EXISTING_DRIVE_RASTERS`. The [Drive guide (ภาษาไทย)](../docs/drive-features-th.md) shows which folders to use. Notebook 00 still requires the full archive.
+
 | Notebook | What it does | Expected result |
 |---|---|---|
 | [00 · Start Here](https://colab.research.google.com/github/Boonyaratt/sentinel2-water-quality/blob/main/notebooks/00_Start_Here.ipynb) | Reassembles the modeling dataset and verifies six locked configurations, spatial inputs and sample comparisons | `verification.json`, 340 × 226 assembled table |
@@ -15,8 +17,19 @@ Each notebook initializes its own runtime; running `00` is recommended as a chec
 
 Outputs are printed in the last cell and stored temporarily under `run_output/`. The final cell shows how to save to Drive. Do not share a notebook with saved outputs that expose team data. Notebook 05 uses a satellite tile basemap; set `USE_SATELLITE_BASEMAP = False` in its configuration cell for a run without those tiles.
 
+## Feature Generation (Google Earth Engine)
+
+These public copies contain the extraction code. They are separate from the prediction notebooks above. Use an authorized Earth Engine project and your own input paths when regenerating data. Export switches are off by default.
+
+| Open in Colab | What it produces |
+|---|---|
+| [01 · Sentinel-2 Station Features](https://colab.research.google.com/github/Boonyaratt/sentinel2-water-quality/blob/main/notebooks/01_Sentinel2_Station_Features.ipynb) | Station matchup CSVs, using the 100 m and watermask v4 configuration |
+| [02 · Environmental Context Features](https://colab.research.google.com/github/Boonyaratt/sentinel2-water-quality/blob/main/notebooks/02_Environmental_Context_Features.ipynb) | Station-level contextual CSVs from the strict v2 extraction |
+| [03 · Moving-Window Polygon Features](https://colab.research.google.com/github/Boonyaratt/sentinel2-water-quality/blob/main/notebooks/03_Moving_Window_Polygon_Features.ipynb) | Polygon-based 62-band feature GeoTIFFs and Sentinel-2 RGB for mapping |
+| [03b · Two-Date Feature Preparation](https://colab.research.google.com/github/Boonyaratt/sentinel2-water-quality/blob/main/notebooks/03b_Two_Date_Feature_Preparation.ipynb) | Candidate-date audit and paired feature/RGB GeoTIFFs on a common grid |
+
 ## Other notebooks
 
 - [Merge field, satellite, and context tables](../src/03_assembly/02_Merge_rswq_dataset.ipynb) and [model-evaluation sources](../src/04_models/) are public source copies. Use the team archive versions and its `COLAB.md` for the original run configurations.
-- The original extraction, scene screening, polygon and moving-window notebooks are included in the team ZIP. Use the [data inventory](../docs/data-inventory.md) to find each one. They are for provenance or regenerating data; the Colab runs above use the existing exports.
+- The unchanged extraction, scene screening, polygon and moving-window notebooks are included in the team ZIP. Use the [data inventory](../docs/data-inventory.md) to find each one.
 - For Global SHAP, set `RUN_GLOBAL_SHAP = True` in notebook 00. Regional SHAP uses the separate `regional_shap_v1` grid and the local runner in the [team runbook](../docs/handoff-th.md).
