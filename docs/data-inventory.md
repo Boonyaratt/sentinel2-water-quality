@@ -1,6 +1,6 @@
 # Handoff Data Inventory
 
-The public GitHub repository is the entry point for the project, figures and Colab notebooks. The restricted `Water_Quality_Processed_Handoff.zip` is the input for a real reproduction. Keep the archive intact when sharing it with the team; after extraction the paths below are relative to the ZIP root.
+The public GitHub repository is the entry point for the project, figures and Colab notebooks. The restricted `Water_Quality_Processed_Handoff_Windows_v2.zip` is the input for a real reproduction. Keep the archive intact when sharing it with the team; after extraction the paths below are relative to the ZIP root. Agents should first read [AGENTS.md](../AGENTS.md), also available inside the v2 ZIP.
 
 | Step | Input in team archive | Original source in team archive | Output or reference |
 |---|---|---|---|
@@ -30,6 +30,7 @@ All 19 original notebooks are in the team ZIP under `src/`. This is where to fin
 
 ## Version and access
 
+- Current agent handoff: `Water_Quality_Processed_Handoff_Windows_v2.zip`, 701,271,208 bytes. SHA-256: `bff939d07db4ca710e62b3af1ba55386d498768cfc82bda3afe58c7e59ce0adc`. It has 200 files: the original research content plus `AGENTS.md`, with `START_HERE.md` and `MANIFEST.csv` updated.
 - Snapshot: `Water_Quality_Processed_Handoff.zip`, 699,886,253 bytes. SHA-256: `1f1039b7a6d113685c2c95f840f2a475be5e936e02090bcf5283f2ba9b506773`.
 - File Explorer-compatible copy: `Water_Quality_Processed_Handoff_Windows.zip`, 701,267,394 bytes. SHA-256: `324437bb6d0bb84c6bc1865a8ea1a172171974c6f039355deacc6a15ad7acc70`. Both packages have the same 199 files and manifest; the ZIP hashes differ because the archive paths and compression changed.
 - Use the snapshot, not a similarly named Drive file. `MANIFEST.csv` inside the archive identifies individual inputs by path, size, and SHA-256. `PIPELINE.md` provides the more detailed dependency map.

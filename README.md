@@ -4,6 +4,8 @@
 
 [Run in Colab](notebooks/README.md) · [Feature extraction & Drive inputs (ภาษาไทย)](docs/drive-features-th.md) · [Data inventory](docs/data-inventory.md) · [Team handoff (ภาษาไทย)](docs/handoff-th.md) · [Figure gallery](docs/figures.md) · [Research workflow](docs/workflow.md)
 
+**Working with an AI agent?** Ask it to read [AGENTS.md](AGENTS.md) first. The same guide is included at the root of the full v2 team ZIP.
+
 ![Representative prediction maps for Thale Luang, Lower Lang Suan River, and Pak Phanang River](figures/03-representative-maps.png)
 
 *Three representative waterbodies. From left to right: locator, turbidity, suspended solids, and DO proxy. Predictions cover eligible water pixels within the selected scenes.*
@@ -41,7 +43,7 @@ Each comparison above uses 33 observations in the historical 2024–2025 evaluat
 
 ## Continue the work
 
-1. Get the restricted `Water_Quality_Processed_Handoff_Windows.zip` from the project owner and place it on your Google Drive. The original `Water_Quality_Processed_Handoff.zip` has the same contents and is also supported in Colab.
+1. Get the restricted `Water_Quality_Processed_Handoff_Windows_v2.zip` from the project owner and place it on your Google Drive. The earlier full ZIPs have the same research inputs and remain supported in Colab.
 2. Open [00 Start Here in Colab](https://colab.research.google.com/github/Boonyaratt/sentinel2-water-quality/blob/main/notebooks/00_Start_Here.ipynb) and run the first verification. The starting point is the cleaned field data and the precomputed Sentinel-2 and context exports. Earth Engine access is not required.
 3. Open the [Colab notebook index](notebooks/README.md) to render Figures 3–5, or the [Thai runbook](docs/handoff-th.md) for modeling, SHAP, and local runs. Use the [data inventory](docs/data-inventory.md) to trace each input and source notebook to its location.
 

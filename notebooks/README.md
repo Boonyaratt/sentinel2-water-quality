@@ -2,7 +2,7 @@
 
 ## Start here
 
-Get the full team ZIP from the project owner. Use `Water_Quality_Processed_Handoff_Windows.zip` for File Explorer, or the original `Water_Quality_Processed_Handoff.zip`. Both contain the same files and work in Colab. Add the shared ZIP to **My Drive** as a shortcut, or upload your copy. Open the appropriate notebook below and run from the top. Keep the ZIP filename unchanged and set `ARCHIVE_PATH` in the first code cell if the ZIP is in a subfolder.
+Get `Water_Quality_Processed_Handoff_Windows_v2.zip` from the project owner. It opens in File Explorer and includes [AGENTS.md](../AGENTS.md). The earlier full ZIPs also work in Colab. Add the shared ZIP to **My Drive** as a shortcut, or upload your copy. Open the appropriate notebook below and run from the top. Keep the ZIP filename unchanged and set `ARCHIVE_PATH` in the first code cell if the ZIP is in a subfolder.
 
 **Already have the original TIFFs on Drive?** For notebooks 04, 05 and 06b, use the small `Water_Quality_Map_Support.zip` and switch on `USE_EXISTING_DRIVE_RASTERS`. The [Drive guide (ภาษาไทย)](../docs/drive-features-th.md) shows which folders to use. Notebook 00 still requires the full archive.
 
