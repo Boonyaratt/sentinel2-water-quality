@@ -10,7 +10,7 @@
 
 ## 1. เตรียมโฟลเดอร์
 
-1. ขอ `Water_Quality_Processed_Handoff.zip` จากเจ้าของโครงการ ชุดนี้ส่งแยกจาก GitHub ผ่าน Drive แบบจำกัดสิทธิ์
+1. ขอ `Water_Quality_Processed_Handoff_Windows.zip` จากเจ้าของโครงการ ชุดนี้เปิดใน File Explorer ได้ ส่วน ZIP รุ่นเดิม `Water_Quality_Processed_Handoff.zip` มีข้อมูลเหมือนกัน แต่ Explorer อาจแสดงว่าโฟลเดอร์ว่าง ทั้งสองรุ่นใช้กับ Colab ได้
 2. แตก ZIP ลงโฟลเดอร์แยก แล้วเปิด terminal ในโฟลเดอร์ที่เห็น `START_HERE.md`, `data_ready/`, `models/`, `src/` และ `tools/`
 3. สร้าง virtual environment ด้วย Python 3.11 และติดตั้ง requirements ของชุด
 

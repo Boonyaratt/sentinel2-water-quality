@@ -14,6 +14,8 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 ARCHIVE_SHA = "1f1039b7a6d113685c2c95f840f2a475be5e936e02090bcf5283f2ba9b506773"
 ARCHIVE_NAME = "Water_Quality_Processed_Handoff.zip"
+WINDOWS_ARCHIVE_SHA = "324437bb6d0bb84c6bc1865a8ea1a172171974c6f039355deacc6a15ad7acc70"
+WINDOWS_ARCHIVE_NAME = "Water_Quality_Processed_Handoff_Windows.zip"
 MAP_SUPPORT_NAME = "Water_Quality_Map_Support.zip"
 DRIVE_RASTER_FOLDERS = {
     "polygon/features": "Water_Quality_RS_Moving_Window_Polygon",
@@ -45,25 +47,38 @@ def write(name, cells):
 
 
 def archive_cells(map_support_sha=None):
+    full_archive_options = textwrap.dedent(f"""
+    MY_DRIVE = Path("/content/drive/MyDrive")
+    FULL_ARCHIVES = {{
+        "{WINDOWS_ARCHIVE_NAME}": "{WINDOWS_ARCHIVE_SHA}",
+        "{ARCHIVE_NAME}": "{ARCHIVE_SHA}",
+    }}
+    full_archive = next(
+        (MY_DRIVE / name for name in FULL_ARCHIVES if (MY_DRIVE / name).is_file()),
+        MY_DRIVE / "{WINDOWS_ARCHIVE_NAME}",
+    )
+    """).strip()
     if map_support_sha:
         instructions = """
         Choose the full team ZIP (default), or set `USE_EXISTING_DRIVE_RASTERS = True` to use the small map-support ZIP plus existing Drive folders. Set `ARCHIVE_PATH` if the ZIP is in a subfolder. Both routes use verified inputs and neither signs into Earth Engine. Save generated results to Drive before disconnecting.
         """
         options = textwrap.dedent(f"""
         USE_EXISTING_DRIVE_RASTERS = False
-        MY_DRIVE = Path("/content/drive/MyDrive")
-        ARCHIVE_PATH = MY_DRIVE / (
-            "{MAP_SUPPORT_NAME}" if USE_EXISTING_DRIVE_RASTERS else "{ARCHIVE_NAME}"
+        ARCHIVE_PATH = (
+            MY_DRIVE / "{MAP_SUPPORT_NAME}" if USE_EXISTING_DRIVE_RASTERS else full_archive
         )
-        EXPECTED_SHA256 = "{map_support_sha}" if USE_EXISTING_DRIVE_RASTERS else "{ARCHIVE_SHA}"
+        EXPECTED_SHA256 = (
+            "{map_support_sha}" if USE_EXISTING_DRIVE_RASTERS
+            else FULL_ARCHIVES.get(ARCHIVE_PATH.name, "{ARCHIVE_SHA}")
+        )
         """).strip()
     else:
         instructions = """
         Open the authorized Drive folder and add the shared ZIP to **My Drive** as a shortcut, or upload your copy there. Set `ARCHIVE_PATH` if the file is in a subfolder. This cell verifies and unpacks the exact team snapshot to temporary Colab storage. No Earth Engine login is used. Save generated results to Drive before disconnecting.
         """
         options = (
-            f'ARCHIVE_PATH = Path("/content/drive/MyDrive/{ARCHIVE_NAME}")\n'
-            f'EXPECTED_SHA256 = "{ARCHIVE_SHA}"'
+            'ARCHIVE_PATH = full_archive\n'
+            f'EXPECTED_SHA256 = FULL_ARCHIVES.get(ARCHIVE_PATH.name, "{ARCHIVE_SHA}")'
         )
     return [
         cell("markdown", "## Load the team data\n\n" + textwrap.dedent(instructions).strip() + "\n"),
@@ -76,7 +91,7 @@ def archive_cells(map_support_sha=None):
         from google.colab import drive
 
         drive.mount("/content/drive")
-        """).lstrip() + "\n" + options + "\n" + textwrap.dedent("""
+        """).lstrip() + "\n" + full_archive_options + "\n\n" + options + "\n" + textwrap.dedent("""
 
         HANDOFF_ROOT = Path("/content/wqr-handoff-" + EXPECTED_SHA256[:12])
         marker = HANDOFF_ROOT / ".verified-archive-sha256"

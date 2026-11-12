@@ -31,6 +31,7 @@ All 19 original notebooks are in the team ZIP under `src/`. This is where to fin
 ## Version and access
 
 - Snapshot: `Water_Quality_Processed_Handoff.zip`, 699,886,253 bytes. SHA-256: `1f1039b7a6d113685c2c95f840f2a475be5e936e02090bcf5283f2ba9b506773`.
+- File Explorer-compatible copy: `Water_Quality_Processed_Handoff_Windows.zip`, 701,267,394 bytes. SHA-256: `324437bb6d0bb84c6bc1865a8ea1a172171974c6f039355deacc6a15ad7acc70`. Both packages have the same 199 files and manifest; the ZIP hashes differ because the archive paths and compression changed.
 - Use the snapshot, not a similarly named Drive file. `MANIFEST.csv` inside the archive identifies individual inputs by path, size, and SHA-256. `PIPELINE.md` provides the more detailed dependency map.
 - Share the ZIP to named team accounts using restricted Drive access. Send the [Colab notebook index](../notebooks/README.md) alongside the private file link. Confirm a recipient can open both links and send back their `verification.json`.
 - Keep each recipient's new analyses in a separate results folder. Do not replace the snapshot with an edited ZIP or mix it with ongoing experiments.
