@@ -28,6 +28,8 @@ These public copies contain the extraction code. They are separate from the pred
 | [03 · Moving-Window Polygon Features](https://colab.research.google.com/github/Boonyaratt/sentinel2-water-quality/blob/main/notebooks/03_Moving_Window_Polygon_Features.ipynb) | Polygon-based 62-band feature GeoTIFFs and Sentinel-2 RGB for mapping |
 | [03b · Two-Date Feature Preparation](https://colab.research.google.com/github/Boonyaratt/sentinel2-water-quality/blob/main/notebooks/03b_Two_Date_Feature_Preparation.ipynb) | Candidate-date audit and paired feature/RGB GeoTIFFs on a common grid |
 
+For Notebook 01, see the [full, strict, and relaxed station tables and the verified Colab run without export](../docs/station-features-run-log.md).
+
 ## Other notebooks
 
 - [Merge field, satellite, and context tables](../src/03_assembly/02_Merge_rswq_dataset.ipynb) and [model-evaluation sources](../src/04_models/) are public source copies. Use the team archive versions and its `COLAB.md` for the original run configurations.
